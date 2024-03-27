@@ -17,15 +17,19 @@ body {
     width: 300px;
 }
 .Logo {
-width: 100px; /* Definindo a largura desejada */
-height: auto; /* Mantendo a proporção da imagem */
+    width: 150px; /* Definindo a largura desejada */
+    height: auto; /* Mantendo a proporção da imagem */
+    align-self:center;
+    margin-left: 25%;
 }
 
 
 .login-container h2 {
-    text-align: center;
-    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2px;
     color: #333;
+    align-items: center;
 }
 
 .login-container input[type="text"],
