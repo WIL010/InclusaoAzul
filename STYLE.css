@@ -1,3 +1,5 @@
+/*Tela de Login*/
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -13,23 +15,25 @@ body {
     background-color: #00ccd3;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 40px;
+    padding: 10px 20px;
     width: 300px;
 }
 .Logo {
-    width: 150px; /* Definindo a largura desejada */
-    height: auto; /* Mantendo a proporção da imagem */
+    width: 150px; 
+    height: auto; 
     align-self:center;
     margin-left: 25%;
 }
 
 
-.login-container h2 {
+.login-container h3 {
     display: flex;
     justify-content: center;
     margin-bottom: 2px;
     color: #333;
     align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: medium;
 }
 
 .login-container input[type="text"],
@@ -64,4 +68,48 @@ body {
 .login-container .signup-link a {
     color: #f7f8f8;
     text-decoration: none;
+}
+
+/* Tela de Cadastro*/
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+    background-color: #00ccd3;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+label {
+    font-weight: bold;
+}
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+input[type="submit"]:hover {
+    background-color: #007bff;
 }
