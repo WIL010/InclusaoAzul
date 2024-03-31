@@ -18,13 +18,13 @@ body {
     padding: 10px 20px;
     width: 300px;
 }
+
 .Logo {
-    width: 150px; 
-    height: auto; 
-    align-self:center;
+    width: 150px;
+    height: auto;
+    align-self: center;
     margin-left: 25%;
 }
-
 
 .login-container h3 {
     display: flex;
@@ -70,14 +70,26 @@ body {
     text-decoration: none;
 }
 
-/* Tela de Cadastro*/
+/* Adicionando media queries para tornar o layout responsivo */
 
+@media screen and (max-width: 600px) {
+    .login-container {
+        width: 80%;
+    }
+    .Logo {
+        width: 100px;
+        margin-left: 20%;
+    }
+}
+
+/* Tela de Cadastro*/
 body {
     font-family: Arial, sans-serif;
     background-color: #f2f2f2;
     margin: 0;
     padding: 0;
 }
+
 .container {
     max-width: 400px;
     margin: 50px auto;
@@ -86,30 +98,43 @@ body {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
 h2 {
     text-align: center;
     margin-bottom: 20px;
 }
+
 label {
     font-weight: bold;
 }
-input[type="text"], input[type="email"], input[type="password"] {
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="submit"] {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
 }
+
 input[type="submit"] {
     background-color: #007bff;
     color: white;
-    padding: 10px 20px;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
 }
+
 input[type="submit"]:hover {
-    background-color: #007bff;
+    background-color: #0056b3;
+}
+
+/* Adicionando regras de mídia para tornar o layout responsivo */
+
+@media screen and (max-width: 600px) {
+    .container {
+        margin: 20px auto;
+    }
 }
