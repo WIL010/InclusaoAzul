@@ -10,22 +10,22 @@ body {
     height: 100vh;
     background-color: #f3f3f3;
 }
-
 .login-container {
     background-color: #00ccd3;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 10px 20px;
-    width: 300px;
+    padding: 5vw; /* Ajusta o preenchimento com base na largura da tela */
+    max-width: 300px; /* Define a largura máxima para garantir que não ultrapasse a largura da tela */
+    margin: 0 auto; /* Centraliza horizontalmente */
 }
 
 .Logo {
-    width: 150px;
-    height: auto;
-    align-self: center;
-    margin-left: 25%;
+    width: 50%; /* Define a largura como 100% para garantir que seja responsiva */
+    height: auto; 
+    display: block; 
+    margin-bottom: 20px; /* Adiciona espaço entre a imagem e outros elementos */
+    margin: 0 auto;
 }
-
 .login-container h3 {
     display: flex;
     justify-content: center;
@@ -72,15 +72,12 @@ body {
 
 /* Adicionando media queries para tornar o layout responsivo */
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 100px) {
     .login-container {
-        width: 80%;
-    }
-    .Logo {
-        width: 100px;
-        margin-left: 20%;
+        max-width: 90%; /* Define uma largura máxima menor para telas menores */
     }
 }
+
 
 /* Tela de Cadastro*/
 body {
