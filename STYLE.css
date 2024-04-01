@@ -88,12 +88,12 @@ body {
 }
 
 .container {
-    max-width: 400px;
-    margin: 50px auto;
     background-color: #00ccd3;
-    padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 5vw;
+    max-width: 300px;
+    margin: 0 auto;
 }
 
 h2 {
@@ -126,6 +126,12 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
     background-color: #0056b3;
+}
+
+.container .signup-link2 {
+    text-align: center;
+    color: #f7f8f8;
+    font-size: 16px;
 }
 
 /* Adicionando regras de mídia para tornar o layout responsivo */
