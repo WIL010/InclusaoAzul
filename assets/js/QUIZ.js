@@ -38,7 +38,7 @@ const questions = [
   ],
 },
 {
-  question: "Já brincou de faz-de-conta, como, por exemplo: fazer de conta que está falando no telefone ou que está cuidando da boneca, ou qualquer outra brincadeira de faz-de-conta?",
+  question: "Já brincou de faz-de-conta, como, por exemplo, fazer de conta que está falando no telefone ou que está cuidando da boneca, ou qualquer outra brincadeira de faz-de-conta?",
   answers: [
     { option: "Sim", correct: true },
     { option: "Não", correct: false },
@@ -208,11 +208,11 @@ function exibirTextoFinal() {
    contentFinish.style.display = "flex";
 
    if (questionsCorrect <= 2) {
-     textoFinalElement.textContent = "Galeroso gay";
+    textoFinalElement.textContent = "Baixo risco:\nÉ improvável que a criança tenha TEA. Se ela tiver menos de 2 anos, repita o teste.";
    } else if (questionsCorrect >= 3 && questionsCorrect <= 8) {
-     textoFinalElement.textContent = "Velho safado";
+    textoFinalElement.textContent = "Moderado risco:\nColete a história da criança e os sintomas para melhor avaliação.";
    } else {
-     textoFinalElement.textContent = "texto3";
+    textoFinalElement.textContent = "Alto risco:\nConsulte um especialista para confirmar o diagnóstico e iniciar o tratamento.";
    }
 }
 
