@@ -1,62 +1,107 @@
-/* Tela de Cadastro*/
+/* Tela de Cadastro */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ajuste a altura para ocupar a tela inteira */
+    background-color: #f3f3f3;
 }
 
-.container {
+.login-container {
     background-color: #00ccd3;
-    border-radius: 8px;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 5vw;
-    max-width: 300px;
+    padding: 5vw; /* Ajusta o preenchimento com base na largura da tela */
+    max-width: 400px; /* Define a largura máxima para garantir que não ultrapasse a largura da tela */
+    margin: 30px auto; /* Centraliza horizontalmente */
+}
+
+.Logo {
+    width: 50%; /* Define a largura como 50% para garantir que seja responsiva */
+    height: auto;
+    display: block;
+    margin-bottom: 20px; /* Adiciona espaço entre a imagem e outros elementos */
     margin: 0 auto;
 }
 
-h2 {
+.login-container h3 {
     text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: medium;
+}
+
+.label-float {
+    position: relative;
     margin-bottom: 20px;
 }
 
-label {
-    font-weight: bold;
+.label-float input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: transparent;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="submit"] {
+.label-float label {
+    position: absolute;
+    pointer-events: none;
+    left: 10px;
+    top: 10px;
+    transition: 0.2s ease all;
+    background-color: #00ccd3;
+    padding: 0 5px; 
+}
+
+.label-float input:focus ~ label,
+.label-float input:not(:placeholder-shown) ~ label {
+    top: -20px;
+    left: 10px;
+    font-size: 12px;
+    color: #007bff;
+}
+
+.login-container input[type="submit"] {
     width: 100%;
     padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-
-input[type="submit"] {
     background-color: #007bff;
-    color: white;
+    color: #fff;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
+    transition: background-color 0.3s ease;
 }
 
-input[type="submit"]:hover {
+.login-container input[type="submit"]:hover {
     background-color: #0056b3;
 }
 
-.container .signup-link2 {
+.signup-link {
     text-align: center;
-    color: #f7f8f8;
-    font-size: 16px;
+    margin-top: 15px;
 }
 
-/* Adicionando regras de mídia para tornar o layout responsivo */
+.signup-link a {
+    color: #f7f8f8;
+    text-decoration: none;
+}
 
+/* Adicionando media queries para tornar o layout responsivo */
 @media screen and (max-width: 600px) {
-    .container {
-        margin: 20px auto;
+    .login-container {
+        max-width: 90%; /* Define uma largura máxima menor para telas menores */
+        padding: 5%;
+    }
+
+    .Logo {
+        width: 50%; /* Ajusta a largura da logo para telas menores */
+    }
+
+    .label-float input {
+        width: calc(100% - 20px); /* Garantir que o tamanho dos inputs se ajuste corretamente */
     }
 }

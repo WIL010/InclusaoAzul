@@ -1,25 +1,36 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no"/>
-        <link rel="stylesheet" type="text/css" href="../css/LOGIN.css" media="screen" />
-        <title>Login</title>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../css/LOGIN.css" />
+    <title>Login</title>
 </head>
 <body>
-   
-<div class="login-container">
-    <img src="Figuras/inclusaozaul01.png"class="Logo">
-    <h3>Faça seu Login</h3>
-    <form action="HOME.html" method="post">
-        <input type="text" name="Usuário" placeholder="Usuario" required>
-        <input type="password" name="Senha" placeholder="Senha" required>
-        <input type="submit" value="Login" href="HOME.html">
-    </form>
-    <div class="signup-link">
-        Não possui conta? <a href="CADASTRO.html">Cadastre-se</a>
+    <div class="login-container">
+        <img src="../Figuras/inclusaozaul01.png" class="Logo" alt="Logo">
+        <h3>Faça seu Login</h3>
+        <form action="HOME.html" method="post" onsubmit="entrar(); return false;">
+            <div class="label-float">
+                <input type="text" id="usuario" name="usuario" placeholder="" required />
+                <label id="userLabel" for="usuario">Usuário</label>
+            </div>
+            <div class="label-float">
+                <input type="password" id="senha" name="senha" placeholder="" required />
+                <label id="senhaLabel" for="senha">Senha</label>
+                <i class="fa fa-eye" aria-hidden="true" id="eyeIcon"></i>
+            </div>
+            <div class="justify-center">
+                <button onclick="entrar()">Entrar</button>
+            </div>
+            <div class="signup-link">
+                Não possui conta? <a href="./CADASTRO.html">Cadastre-se</a>
+            </div>
+        </form>
+        <div id="msgError"></div>
     </div>
-</div>
-
+    <script src="../js/LOGIN.js"></script>
 </body>
 </html>

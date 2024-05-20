@@ -1,5 +1,4 @@
-/*Tela de Login*/
-
+/* Tela de Login */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -7,42 +6,63 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 300px;
+    height: 100vh; /* Ajuste a altura para ocupar a tela inteira */
     background-color: #f3f3f3;
 }
+
 .login-container {
     background-color: #00ccd3;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 5vw; /* Ajusta o preenchimento com base na largura da tela */
     max-width: 400px; /* Define a largura máxima para garantir que não ultrapasse a largura da tela */
-    margin: 0 auto; /* Centraliza horizontalmente */
+    margin: 30px auto; /* Centraliza horizontalmente */
 }
 
 .Logo {
-    width: 50%; /* Define a largura como 100% para garantir que seja responsiva */
+    width: 50%; /* Define a largura como 50% para garantir que seja responsiva */
     height: auto; 
     display: block; 
     margin-bottom: 20px; /* Adiciona espaço entre a imagem e outros elementos */
     margin: 0 auto;
 }
+
 .login-container h3 {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 2px;
+    text-align: center;
+    margin-bottom: 20px;
     color: #333;
-    align-items: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     font-size: medium;
 }
 
-.login-container input[type="text"],
-.login-container input[type="password"] {
+.label-float {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.label-float input {
     width: calc(100% - 20px);
     padding: 10px;
-    margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    background: transparent;
+}
+
+.label-float label {
+    position: absolute;
+    pointer-events: none;
+    left: 10px;
+    top: 10px;
+    transition: 0.2s ease all;
+    background-color: #00ccd3; /* Background to match the container */
+    padding: 0 5px; /* Padding to avoid label text overlapping with input border */
+}
+
+.label-float input:focus ~ label,
+.label-float input:not(:placeholder-shown) ~ label {
+    top: -20px;
+    left: 10px;
+    font-size: 12px;
+    color: #007bff;
 }
 
 .login-container input[type="submit"] {
@@ -60,29 +80,52 @@ body {
     background-color: #0056b3;
 }
 
-.login-container .signup-link {
+.signup-link {
     text-align: center;
     margin-top: 15px;
 }
 
-.login-container .signup-link a {
+.signup-link a {
     color: #f7f8f8;
     text-decoration: none;
 }
 
-/* Adicionando media queries para tornar o layout responsivo */
+button {
+    background-color: transparent;
+    border-color: #03a0a5;
+    color: #ffffff;
+    padding: 20px;
+    font-weight: 800; /* Corrigido de 'font: weight 800px' para 'font-weight: 800' */
+    font-size: 15pt;
+    margin-top: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    width: 100%; /* Ajuste para 100% para se adaptar ao contêiner pai */
+}
 
-@media screen and (max-width: 100px) {
+button:hover {
+    background-color: #062a77;
+    color: #fff;
+}
+
+/* Adicionando media queries para tornar o layout responsivo */
+@media screen and (max-width: 600px) {
     .login-container {
-        max-width: 100%; /* Define uma largura máxima menor para telas menores */
+        max-width: 90%; /* Define uma largura máxima menor para telas menores */
         padding: 5%;
     }
-    .Logo{
-        width: 50%;
+
+    .Logo {
+        width: 50%; /* Ajusta a largura da logo para telas menores */
     }
 
-    .login-container input[type = "text"],
-    .login-container input[type="password"]{
-        width: calc(100% - 20px);
+    .label-float input {
+        width: calc(100% - 20px); /* Garantir que o tamanho dos inputs se ajuste corretamente */
+    }
+
+    button {
+        width: calc(100% - 20px); /* Ajusta a largura do botão para telas menores */
     }
 }
