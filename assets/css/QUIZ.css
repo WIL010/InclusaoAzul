@@ -1,0 +1,97 @@
+/*QUIZ*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'poppins', sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  background: linear-gradient(90deg, rgb(31, 62, 199) 0%, rgba(77,39,182,1) 100%);
+  background-image: url(img_aut.png);/
+}
+
+body h2 {
+  color: #0056b3;
+}
+
+main {
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 500px;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+}
+
+.spnQtd {
+  text-align: end;
+}
+
+.answers {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+button {
+  width: 100%;
+  text-align: start;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #008CCC;
+  color: white;
+}
+.finish .texto-final{
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;    
+    color: rgb(10, 10, 10);
+}
+
+.Home{
+    width: 25%;
+    text-align: center;
+    padding: 5px;
+    border: 1px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color:#00ccd3;
+    color: white;  
+}
+
+.color-HOME{
+    color: black; 
+}
+.finish {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.finish button {
+  text-align: center;
+}

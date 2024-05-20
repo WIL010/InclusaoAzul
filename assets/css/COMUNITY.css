@@ -1,0 +1,177 @@
+/* COMUNITY */
+
+/* Reset de Estilos */
+body, h1, h2, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+
+.container-Comunity {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #333;
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+p, ul {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.HOME{
+    width: 25%;
+    text-align: center;
+    padding: 5px;
+    border: 1px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color:#00ccd3;
+    color: white;  
+}
+
+.color-HOME3{
+    color: black; 
+}
+
+/* Estilos Responsivos */
+@media only screen and (max-width: 768px) {
+    .container-TEA {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    ul {
+        padding-left: 15px;
+    }
+}
+
+* Reset de Estilos */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+}
+
+.sidebar h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin-bottom: 10px;
+}
+
+.sidebar a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.content {
+    margin-left: 250px;
+    padding: 20px;
+}
+
+.config-item {
+    margin-bottom: 30px;
+}
+
+.config-item h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.config-item p {
+    color: #666;
+    font-size: 16px;
+}
+
+/* Estilos Responsivos */
+@media only screen and (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .content {
+        margin-left: 0;
+    }
+}

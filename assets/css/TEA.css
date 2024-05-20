@@ -1,0 +1,82 @@
+/*TEA*/
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos Globais */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+
+.container-TEA {
+    max-width: 800px; /* Corrigido o valor de max-width para um valor absoluto ou relativo adequado */
+    margin: 50px auto;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+h2 {
+    margin-top: 20px;
+}
+
+p, ul {
+    color: #666;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.color-HOME2 {
+    color: black;
+}
+
+/* Estilos Responsivos */
+@media only screen and (max-width: 768px) {
+    .container-TEA {
+        padding: 15px; /* Reduzindo o padding para telas menores */
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    h1 {
+        font-size: 24px; /* Aumentando o tamanho da fonte do título para telas menores */
+    }
+    
+    h2 {
+        font-size: 20px; /* Ajustando o tamanho da fonte do subtítulo para telas menores */
+        margin-top: 15px;
+    }
+
+    p {
+        font-size: 16px; /* Reduzindo o tamanho da fonte do parágrafo para telas menores */
+    }
+
+    ul {
+        padding-left: 15px;
+    }
+}
