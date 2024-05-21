@@ -51,14 +51,16 @@ a:hover {
 }
 
 .HOME{
-    width: 25%;
+    display: block; /* Garante que o botão seja um bloco para aplicar margin auto */
+    width: 50%; /* Aumentei a largura para melhorar a usabilidade em dispositivos móveis */
     text-align: center;
-    padding: 5px;
-    border: 1px;
+    padding: 10px;
+    margin: 20px auto; /* Centraliza o botão horizontalmente */
+    border: none; 
     border-radius: 5px;
     cursor: pointer;
-    background-color:#00ccd3;
-    color: white;  
+    background-color: #00ccd3;
+    color: white;
 }
 
 .color-HOME3{
