@@ -18,7 +18,7 @@ body {
 }
 
 .container-TEA {
-    max-width: 800px; /* Corrigido o valor de max-width para um valor absoluto ou relativo adequado */
+    max-width: 700px; /* Corrigido o valor de max-width para um valor absoluto ou relativo adequado */
     margin: 50px auto;
     background-color: #fff;
     border-radius: 15px;
