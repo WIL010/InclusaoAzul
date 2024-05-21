@@ -24,6 +24,7 @@ body {
     border-radius: 15px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 20px;
+    height: 100vh;
 }
 
 h1, h2 {
@@ -53,6 +54,19 @@ a:hover {
 
 .color-HOME2 {
     color: black;
+}
+
+.Home{
+    display: block; /* Garante que o botão seja um bloco para aplicar margin auto */
+    width: 50%; /* Aumentei a largura para melhorar a usabilidade em dispositivos móveis */
+    text-align: center;
+    padding: 10px;
+    margin: 20px auto; /* Centraliza o botão horizontalmente */
+    border: none; 
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #00ccd3;
+    color: white;
 }
 
 /* Estilos Responsivos */
