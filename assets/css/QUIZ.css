@@ -1,137 +1,138 @@
 /*QUIZ*/
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-  }
-  
-  body {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 20px; /* Aumentei o gap para um melhor espaçamento */
-    background: linear-gradient(90deg, rgb(31, 62, 199) 0%, rgba(77, 39, 182, 1) 100%);
-    background-image: url('img_aut.png'); /* Corrigi a sintaxe para o URL da imagem */
-    background-size: cover;
-    background-position: center;
-  }
-  
-  body h2 {
-    color: #0056b3;
-    text-align: center;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px; /* Aumentei o gap para um melhor espaçamento */
+  background: linear-gradient(90deg, rgb(31, 62, 199) 0%, rgba(77, 39, 182, 1) 100%);
+  background-image: url('img_aut.png'); /* Corrigi a sintaxe para o URL da imagem */
+  background-size: cover;
+  background-position: center;
+}
+
+body h2 {
+  color: #0056b3;
+  text-align: center;
+}
+
+main {
+  background-color: white;
+  padding: 20px; /* Aumentei o padding para um melhor espaçamento interno */
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+}
+
+.spnQtd {
+  text-align: end;
+}
+
+.answers {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Aumentei o gap para um melhor espaçamento entre as respostas */
+}
+
+button {
+  width: 100%;
+  text-align: start;
+  padding: 10px; /* Aumentei o padding para melhorar a usabilidade */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #008CCC;
+  color: white;
+  transition: background-color 0.3s ease; /* Adicionei uma transição suave */
+}
+
+button:hover {
+  background-color: #006bb3; /* Adicionei um efeito hover para os botões */
+}
+
+.finish .texto-final {
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;    
+  color: rgb(10, 10, 10);
+}
+
+.Home {
+  width: 50%; /* Aumentei a largura para melhorar a usabilidade em dispositivos móveis */
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+  border: none; 
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #00ccd3;
+  color: white;
+}
+
+.color-HOME {
+  color: black; 
+}
+
+.finish {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.finish button {
+  text-align: center;
+}
+
+/* Adicionando media queries para tornar o layout responsivo */
+@media screen and (max-width: 600px) {
   main {
-    background-color: white;
-    padding: 20px; /* Aumentei o padding para um melhor espaçamento interno */
-    border-radius: 10px;
-    width: 90%;
-    max-width: 500px;
-    min-height: 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    padding: 10px;
+    max-width: 90%;
   }
-  
-  .content {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 10px;
-  }
-  
-  .spnQtd {
-    text-align: end;
-  }
-  
-  .answers {
-    display: flex;
-    flex-direction: column;
-    gap: 10px; /* Aumentei o gap para um melhor espaçamento entre as respostas */
-  }
-  
+
   button {
-    width: 100%;
-    text-align: start;
-    padding: 10px; /* Aumentei o padding para melhorar a usabilidade */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    background-color: #008CCC;
-    color: white;
-    transition: background-color 0.3s ease; /* Adicionei uma transição suave */
+    padding: 8px;
   }
-  
-  button:hover {
-    background-color: #006bb3; /* Adicionei um efeito hover para os botões */
-  }
-  
-  .finish .texto-final {
-    width: 100%;
-    text-align: center;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;    
-    color: rgb(10, 10, 10);
-  }
-  
+
   .Home {
-    width: 50%; /* Aumentei a largura para melhorar a usabilidade em dispositivos móveis */
-    text-align: center;
-    padding: 10px;
-    border: none; /* Removi a borda */
-    border-radius: 5px;
-    cursor: pointer;
-    background-color: #00ccd3;
-    color: white;
+    width: 70%; /* Ajusta a largura do botão Home em telas menores */
   }
-  
-  .color-HOME {
-    color: black; 
+}
+
+@media screen and (max-width: 400px) {
+  body {
+    gap: 10px; /* Reduz o gap em telas muito pequenas */
   }
-  
-  .finish {
-    display: none;
-    flex-direction: column;
-    gap: 10px;
+
+  button {
+    padding: 6px;
   }
-  
-  .finish button {
-    text-align: center;
+
+  .Home {
+    width: 80%; /* Ajusta ainda mais a largura do botão Home */
   }
-  
-  /* Adicionando media queries para tornar o layout responsivo */
-  @media screen and (max-width: 600px) {
-    main {
-      padding: 10px;
-      max-width: 90%;
-    }
-  
-    button {
-      padding: 8px;
-    }
-  
-    .Home {
-      width: 70%; /* Ajusta a largura do botão Home em telas menores */
-    }
-  }
-  
-  @media screen and (max-width: 400px) {
-    body {
-      gap: 10px; /* Reduz o gap em telas muito pequenas */
-    }
-  
-    button {
-      padding: 6px;
-    }
-  
-    .Home {
-      width: 80%; /* Ajusta ainda mais a largura do botão Home */
-    }
-  }
+}
