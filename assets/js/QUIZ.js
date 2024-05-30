@@ -197,7 +197,6 @@ function nextQuestion(e) {
   }
 }
 
-
 function finish() {
    exibirTextoFinal(); // Chamar a função para exibir o texto
 }
