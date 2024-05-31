@@ -72,8 +72,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 senha: senha.value
             };
 
-            fetch('http://127.0.0.1:5500/api/inserir', {
-                method: 'GET',
+            fetch('api/inserir', {
+                method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },

@@ -8,8 +8,9 @@ const routes = require('./routes');
 const server = express();
 server.use(cors());
 server.use(bodyParser.urlencoded({extended: false}));
+server.use(bodyParser.json());
 
-server.use('http://127.0.0.1:5500/api/inserir', routes)
+server.use('/api', routes)
 
 server.listen(process.env.PORT, ()=>{
     console.log(`Servidor rodando em http//localhost:${process.env.PORT}`);
