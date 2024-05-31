@@ -1,16 +1,12 @@
-const SERVICES = require('./SERVICES');
+const SERVICES = require('./SERVICES.js');
 
-module.exports = {
-    inserir: async(req, res) => {
-        let json = {error:'', result:{}};
+module.exports.cadastrarUsuario = async (req, res) => {
+    let json = { error: '', result: {} };
+    let { nome, usuario, email, senha } = req.body;
 
-        let nome = req.body.name;
-        let usuario = req.body.usuario
-        let email = req.body.email;
-        let senha = req.body.senha;
-
-        if (nome && email && senha){
-            let usuarioCodigo = await SERVICES.inserir(nome, usuario, email, senha);
+    if (nome && usuario && email && senha) {
+        try {
+            let usuarioCodigo = await SERVICES.inserirUsuario(nome, usuario, email, senha);
             json.result = {
                 codigo: usuarioCodigo,
                 nome,
@@ -18,10 +14,11 @@ module.exports = {
                 email,
                 senha
             };
-        }else{
-            json.error = 'Campos não enviados';
+        } catch (error) {
+            json.error = 'Erro ao cadastrar usuário';
         }
-        res.json(json);
-    },
-
-}
+    } else {
+        json.error = 'Campos não enviados';
+    }
+    res.json(json);
+};

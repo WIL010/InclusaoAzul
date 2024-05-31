@@ -1,11 +1,9 @@
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="../css/CADASTRO.css" />
-    <title>Signup</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="../css/cadastro.css">
 </head>
 <body>
     <div class="login-container">
@@ -13,45 +11,35 @@
         <h3>Cadastrar</h3>
         <div id="msgError"></div>
         <div id="msgSuccess"></div>
-        
-        <form action="LOGIN.html" method="post" onsubmit="cadastrar(); return false;">
+        <form id="formCadastro">
             <div class="label-float">
-                <input type="text" id="nome" name="nome" placeholder=" " required />
-                <label id="labelNome" for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" placeholder=" " required>
+                <label id="labelNome">Nome</label>
             </div>
-            
             <div class="label-float">
-                <input type="text" id="usuario" name="usuario" placeholder=" " required />
-                <label id="labelUsuario" for="usuario">Usuário</label>
+                <input type="text" id="usuario" name="usuario" placeholder=" " required>
+                <label id="labelUsuario">Usuário</label>
             </div>
-
             <div class="label-float">
-                <input type="email" id="email" name="email" placeholder=" " required />
-                <label id="labelEmail" for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder=" " required>
+                <label id="labelEmail">Email</label>
             </div>
-            
             <div class="label-float">
-                <input type="password" id="senha" name="senha" placeholder=" " required />
-                <label id="labelSenha" for="senha">Senha</label>
-                <i id="verSenha" class="fa fa-eye" aria-hidden="true"></i>
+                <input type="password" id="senha" name="senha" placeholder=" " required>
+                <label id="labelSenha">Senha</label>
+                <button type="button" id="verSenha" class="fa fa-eye"></button>
             </div>
-            
             <div class="label-float">
-                <input type="password" id="confirmSenha" name="confirmSenha" placeholder=" " required />
-                <label id="labelConfirmSenha" for="confirmSenha">Confirmar Senha</label>
-                <i id="verConfirmSenha" class="fa fa-eye" aria-hidden="true"></i>
+                <input type="password" id="confirmSenha" name="confirmSenha" placeholder=" " required>
+                <label id="labelConfirmSenha">Confirmar Senha</label>
+                <button type="button" id="verConfirmSenha" class="fa fa-eye"></button>
             </div>
-            
-            <div class="justify-center">
-                <input type="submit" value="Cadastrar">
-            </div>
-            
-            <div class="signup-link">
-                <a href="../html/LOGIN.html">Voltar para tela de Login</a>
-            </div>
+            <input type="submit" value="Cadastrar">
         </form>
+        <div class="signup-link">
+            <a href="../html/LOGIN.html">Já possui uma conta? Login</a>
+        </div>
     </div>
-    
     <script src="../js/CADASTRO.js"></script>
 </body>
 </html>

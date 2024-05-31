@@ -1,16 +1,13 @@
-const DB = require('./DB')
+const db = require('./DB.js')
 
-module.exports = {
-    inserir: (nome, usuario, email, senha)=> {
-        return new Promise((aceito, rejeitado)=> {
-
-            db.query('INSERT INTO usuarios (nome, usuario, email, senha) VALUES (?, ?, ?)',
-                [nome, usuario, email, senha],
-                (error, results)=>{
-                    if(error){ rejeitado(error); return; }
-                    aceito(results.insertCodigo); //insertId
-                }
-            );
-        });
-    },
+module.exports.inserirUsuario = (nome, usuario, email, senha) => {
+    return new Promise((resolve, reject) => {
+        db.query('INSERT INTO usuarios (nome, usuario, email, senha) VALUES (?, ?, ?, ?)',
+            [nome, usuario, email, senha],
+            (error, results) => {
+                if (error) { reject(error); return; }
+                resolve(results.insertId);
+            }
+        );
+    });
 };

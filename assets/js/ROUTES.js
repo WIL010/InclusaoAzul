@@ -1,7 +1,7 @@
-const express = require('express')
-const router = express.Router()
-const CONTROLLERS = require('./CONTROLLERS')
+const express = require('express');
+const CONTROLLERS = require('./CONTROLLERS.js');
+const router = express.Router();
 
-router.post('/usuario', CONTROLLERS.inserir);
+router.post('http://127.0.0.1:5500/api/inserir', CONTROLLERS.cadastrarUsuario);
 
-module.exports = router
+module.exports = router;
