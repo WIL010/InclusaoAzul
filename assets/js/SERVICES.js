@@ -11,3 +11,21 @@ module.exports.inserirUsuario = (nome, usuario, email, senha) => {
         );
     });
 };
+
+module.exports.buscarUsuarios = () => {
+    return new Promise((resolve, reject) => {
+        // Consulta SQL para selecionar todos os usuários
+        const query = 'SELECT * FROM usuarios';
+
+        // Execute a consulta SQL
+        db.query(query, (error, results) => {
+            if (error) {
+                // Se ocorrer um erro, rejeite a promessa com o erro
+                reject(error);
+            } else {
+                // Se a consulta for bem-sucedida, resolva a promessa com os resultados
+                resolve(results);
+            }
+        });
+    });
+};

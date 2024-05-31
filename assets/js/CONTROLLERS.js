@@ -22,3 +22,16 @@ module.exports.cadastrarUsuario = async (req, res) => {
     }
     res.json(json);
 };
+
+const { buscarUsuarios } = require('./SERVICES.js');
+
+// Exemplo de uso da função buscarUsuarios
+buscarUsuarios()
+    .then(usuarios => {
+        // Manipule os resultados dos usuários aqui
+        console.log('Usuários encontrados:', usuarios);
+    })
+    .catch(error => {
+        // Lidar com erros caso a consulta falhe
+        console.error('Erro ao buscar usuários:', error);
+    });
