@@ -3,13 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let labelNome = document.querySelector('#labelNome');
     let validNome = false;
 
-    let usuario = document.querySelector('#usuario');
-    let labelUsuario = document.querySelector('#labelUsuario');
-    let validUsuario = false;
-
-    let email = document.querySelector('#email');
-    let labelEmail = document.querySelector('#labelEmail');
-    let validEmail = false;
+    let email = document.querySelector('#email'); // Alterado de usuario para email
+    let labelEmail = document.querySelector('#labelEmail'); // Alterado de labelUsuario para labelEmail
+    let validEmail = false; // Alterado de validUsuario para validEmail
 
     let senha = document.querySelector('#senha');
     let labelSenha = document.querySelector('#labelSenha');
@@ -30,13 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
         labelNome.style.color = validNome ? 'green' : 'red';
         labelNome.textContent = validNome ? 'Nome' : 'Nome *Insira no mínimo 3 caracteres';
         nome.style.borderColor = validNome ? 'green' : 'red';
-    });
-
-    usuario.addEventListener('keyup', () => {
-        validUsuario = usuario.value.length >= 5;
-        labelUsuario.style.color = validUsuario ? 'green' : 'red';
-        labelUsuario.textContent = validUsuario ? 'Usuário' : 'Usuário *Insira no mínimo 5 caracteres';
-        usuario.style.borderColor = validUsuario ? 'green' : 'red';
     });
 
     email.addEventListener('keyup', () => {
@@ -63,16 +52,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelector('#formCadastro').addEventListener('submit', (e) => {
         e.preventDefault();
-        console.log(`validNome: ${validNome}, validUsuario: ${validUsuario}, validEmail: ${validEmail}, validSenha: ${validSenha}, validConfirmSenha: ${validConfirmSenha}`);
-        if (validNome && validUsuario && validEmail && validSenha && validConfirmSenha) {
+        console.log(`validNome: ${validNome}, validEmail: ${validEmail}, validSenha: ${validSenha}, validConfirmSenha: ${validConfirmSenha}`);
+        if (validNome && validEmail && validSenha && validConfirmSenha) {
             let userData = {
                 nome: nome.value,
-                usuario: usuario.value,
                 email: email.value,
                 senha: senha.value
             };
-
-            fetch('api/inserir', {
+            fetch('http://localhost:3000/api/usuarios', { 
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -81,23 +68,25 @@ document.addEventListener('DOMContentLoaded', () => {
             }).then(response => {
                 console.log(response); // Adicionando log para verificar a resposta da API
                 return response.json();
-            }).then(data => {
-                console.log(data); // Adicionando log para verificar os dados recebidos
-                if (data.error) {
+            }).then(userData => {
+                console.log(userData); // Adicionando log para verificar os dados recebidos
+                if (userData.error) {
                     msgError.style.display = 'block';
-                    msgError.innerHTML = `<strong>${data.error}</strong>`;
+                    msgError.innerHTML = `<strong>${userData.error}</strong>`;
                     msgSuccess.style.display = 'none';
                 } else {
                     msgSuccess.style.display = 'block';
                     msgSuccess.innerHTML = '<strong>Cadastrando usuário...</strong>';
                     msgError.style.display = 'none';
-
+            
                     setTimeout(() => {
                         window.location.href = '../html/LOGIN.html';
                     }, 3000);
                 }
             }).catch(error => {
                 console.error('Erro ao fazer a requisição:', error); // Adicionando log para erros na requisição
+                console.log('Detalhes do erro:', error.message); // Mostrar mensagem de erro
+                console.log('Stack trace:', error.stack); // Mostrar stack trace do erro
             });
         } else {
             msgError.style.display = 'block';

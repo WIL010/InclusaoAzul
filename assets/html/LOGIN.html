@@ -12,10 +12,10 @@
     <div class="login-container">
         <img src="../Figuras/inclusaozaul01.png" class="Logo" alt="Logo">
         <h3>Faça seu Login</h3>
-        <form action="HOME.html" method="post" onsubmit="entrar(); return false;">
+        <form id="formLogin" action="HOME.html" method="post">
             <div class="label-float">
-                <input type="text" id="usuario" name="usuario" placeholder="" required />
-                <label id="userLabel" for="usuario">Usuário</label>
+                <input type="text" id="email" name="email" placeholder=" " required>
+                <label id="emailLabel">Email</label>
             </div>
             <div class="label-float">
                 <input type="password" id="senha" name="senha" placeholder="" required />
@@ -23,7 +23,7 @@
                 <i class="fa fa-eye" aria-hidden="true" id="eyeIcon"></i>
             </div>
             <div class="justify-center">
-                <button onclick="entrar()">Entrar</button>
+                <button type="submit">Entrar</button>
             </div>
             <div class="signup-link">
                 Não possui conta? <a href="./CADASTRO.html">Cadastre-se</a>

@@ -1,9 +1,9 @@
 const db = require('./DB.js')
 
-module.exports.inserirUsuario = (nome, usuario, email, senha) => {
+module.exports.inserirUsuario = (nome, email, senha) => {
     return new Promise((resolve, reject) => {
-        db.query('INSERT INTO usuarios (nome, usuario, email, senha) VALUES (?, ?, ?, ?)',
-            [nome, usuario, email, senha],
+        db.query('INSERT INTO usuarios (nome, email, senha) VALUES (?, ?, ?)',
+            [nome, email, senha],
             (error, results) => {
                 if (error) { reject(error); return; }
                 resolve(results.insertId);

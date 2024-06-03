@@ -5,13 +5,14 @@ const bodyParser = require('body-parser');
 
 const routes = require('./routes');
 
-const server = express();
-server.use(cors());
-server.use(bodyParser.urlencoded({extended: false}));
-server.use(bodyParser.json());
+const app = express();
+app.use(cors());
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 
-server.use('/api', routes)
+app.use(express.json());
+app.use('/api', routes)
 
-server.listen(process.env.PORT, ()=>{
+app.listen(process.env.PORT, ()=>{
     console.log(`Servidor rodando em http//localhost:${process.env.PORT}`);
 });
