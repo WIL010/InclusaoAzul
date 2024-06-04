@@ -11,7 +11,6 @@ module.exports.inserirUsuario = (nome, email, senha) => {
         );
     });
 };
-
 module.exports.buscarUsuarios = () => {
     return new Promise((resolve, reject) => {
         // Consulta SQL para selecionar todos os usuários

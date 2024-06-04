@@ -3,9 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let labelNome = document.querySelector('#labelNome');
     let validNome = false;
 
-    let email = document.querySelector('#email'); // Alterado de usuario para email
-    let labelEmail = document.querySelector('#labelEmail'); // Alterado de labelUsuario para labelEmail
-    let validEmail = false; // Alterado de validUsuario para validEmail
+    let email = document.querySelector('#email'); 
+    let labelEmail = document.querySelector('#labelEmail'); 
+    let validEmail = false; 
 
     let senha = document.querySelector('#senha');
     let labelSenha = document.querySelector('#labelSenha');

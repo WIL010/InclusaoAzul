@@ -1,0 +1,13 @@
+{
+    "background_color": "#ffffff",
+    "dir": "ltr",
+    "display": "standalone",
+    "name": "Inclusão Azul",
+    "orientation": "any",
+    "scope": "/",
+    "short_name": "Inclusão Azul",
+    "start_url": "http://server-projeto.ddns.net:81/html/LOGIN.html",
+    "theme_color": "#0db2f6",
+    "description": "O \"Inclusão Azul\" é um aplicativo inovador e abrangente, projetado para apoiar e informar indivíduos que convivem com pessoas diagnosticadas com Transtorno do Espectro Autista (TEA) no Brasil. Reconhecendo a complexidade do autismo e a importância de uma abordagem holística, o aplicativo não substitui o diagnóstico médico, mas incentiva a busca por profissionais especializados e oferece recursos valiosos para promover a inclusão e o entendimento mútuo.",
+    "lang": "pt"
+  }

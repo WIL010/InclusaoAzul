@@ -1,8 +1,6 @@
-const { buscarUsuarios } = require("./SERVICES");
-
 // Função para mostrar/esconder a senha
 function togglePasswordVisibility() {
-    let inputSenha = document.querySelector('#senha');
+    const inputSenha = document.querySelector('#senha');
     inputSenha.type = inputSenha.type === 'password' ? 'text' : 'password';
 }
 
@@ -12,59 +10,57 @@ document.querySelector('#eyeIcon').addEventListener('click', togglePasswordVisib
 // Função para processar o login
 async function entrar(event) {
     event.preventDefault();
-    let email = document.querySelector('#email').value.trim();
-    let senha = document.querySelector('#senha').value.trim();
-    let msgError = document.querySelector('#msgError');
+    const email = document.querySelector('#email').value.trim();
+    const senha = document.querySelector('#senha').value.trim();
+    const msgError = document.querySelector('#msgError');
 
     if (!email || !senha) {
-        msgError.style.display = 'block';
-        msgError.innerHTML = 'Por favor, forneça um email e uma senha';
+        exibirMensagemErro('Por favor, forneça um email e uma senha');
         return;
     }
 
     try {
-        // Verifica se o usuário está cadastrado no sistema
-        const usuarioCadastrado = await verificarUsuarioCadastrado(email, senha);
-        
+        const response = await fetch('http://localhost:3000/api/usuarios', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+
+        if (!response.ok) throw new Error('Erro ao buscar usuários');
+
+        const usuarios = await response.json();
+        const usuarioCadastrado = usuarios.find(user => user.email === email && user.senha === senha);
+
         if (usuarioCadastrado) {
-            // Redireciona para a página HOME.html após o login bem-sucedido
-            window.location.href = '../html/HOME.html';
-
-            // Gera um token aleatório
-            let mathRandom = Math.random().toString(16).substr(2);
-            let token = mathRandom + mathRandom;
-
-            // Armazena o token e o usuário logado no localStorage
-            localStorage.setItem('token', token);
-            localStorage.setItem('userLogado', JSON.stringify(email));
+            redirecionarParaHome(email);
         } else {
-            // Exibe uma mensagem de erro se o usuário não estiver cadastrado
-            msgError.style.display = 'block';
-            msgError.innerHTML = 'Email ou senha incorretos';
+            exibirMensagemErro('Email ou senha incorretos');
         }
     } catch (error) {
-        // Exibe uma mensagem de erro genérica se ocorrer um erro ao verificar o usuário
         console.error('Erro ao verificar usuário:', error);
-        msgError.style.display = 'block';
-        msgError.innerHTML = 'Ocorreu um erro ao processar sua solicitação. Por favor, tente novamente mais tarde.';
+        exibirMensagemErro('Ocorreu um erro ao processar sua solicitação. Por favor, tente novamente mais tarde.');
     }
 }
 
-// Função para verificar se o usuário está cadastrado no sistema
-async function verificarUsuarioCadastrado(email, senha) {
-    try {
-        // Busca todos os usuários do sistema
-        const usuarios = await fetch('http://localhost:3000/api/usuarios').then(response => response.json());
+// Função para exibir mensagem de erro
+function exibirMensagemErro(mensagem) {
+    const msgError = document.querySelector('#msgError');
+    msgError.style.display = 'block';
+    msgError.textContent = mensagem;
+}
 
-        // Verifica se há um usuário com o email e senha fornecidos
-        const usuarioEncontrado = usuarios.find(user => user.email === email && user.senha === senha);
+// Função para redirecionar para a página HOME.html após login bem-sucedido
+function redirecionarParaHome(email) {
+    const token = gerarTokenSeguro();
+    localStorage.setItem('token', token);
+    localStorage.setItem('userLogado', JSON.stringify(email));
+    window.location.href = '../html/HOME.html';
+}
 
-        // Retorna verdadeiro se o usuário foi encontrado, falso caso contrário
-        return !!usuarioEncontrado;
-    } catch (error) {
-        // Em caso de erro, lança uma exceção
-        throw new Error('Erro ao buscar usuários:', error);
-    }
+// Função para gerar um token seguro
+function gerarTokenSeguro() {
+    return crypto.getRandomValues(new Uint8Array(16)).toString();
 }
 
 // Adiciona evento de envio ao formulário de login

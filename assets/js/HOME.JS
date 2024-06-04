@@ -1,46 +1,56 @@
-if (localStorage.getItem("token") == null) {
-    alert("Você precisa estar logado para acessar essa página");
-    window.location.href = "LOGIN.html";
-  }
-  
-  const userLogado = JSON.parse(localStorage.getItem("userLogado"));
-  
-  const logado = document.querySelector("#logado");
-  logado.innerHTML = `Olá ${userLogado.nome}`;
-  
-  function sair() {
+// Verifica se o usuário está logado
+function verificarLogin() {
+    const token = localStorage.getItem("token");
+    const userLogado = JSON.parse(localStorage.getItem("userLogado"));
+    if (!token || !userLogado) {
+        alert("Você precisa estar logado para acessar essa página");
+        window.location.href = "LOGIN.html";
+    }
+    return userLogado;
+}
+
+// Função para exibir o nome do usuário logado
+function exibirNomeUsuario() {
+    const userLogado = verificarLogin();
+    const logado = document.querySelector("#logado");
+    logado.textContent = `Olá, ${userLogado.nome}`;
+}
+
+// Função para fazer logout
+function fazerLogout() {
     localStorage.removeItem("token");
     localStorage.removeItem("userLogado");
     window.location.href = "./assets/html/LOGIN.html";
-  }
-
-  document.getElementById('quiz-button').addEventListener('click', function(event) {
-    event.preventDefault(); // Impede que o link navegue para outra página
-    document.getElementById('popup').style.display = 'flex';
-});
-
-function closePopup() {
-    document.getElementById('popup').style.display = 'none';
 }
 
-// Selecionar o botão do quiz e o pop-up
-const quizButton = document.getElementById('quiz-button');
-const popup = document.getElementById('popup');
-const closeBtn = document.querySelector('.close-btn');
-
-// Mostrar o pop-up quando o botão do quiz for clicado
-quizButton.addEventListener('click', () => {
+// Função para exibir o pop-up do quiz
+function exibirPopupQuiz() {
+    const popup = document.getElementById('popup');
     popup.style.display = 'flex';
-});
+}
 
-// Fechar o pop-up quando o botão de fechar for clicado
-closeBtn.addEventListener('click', () => {
-    popup.style.display = 'none';
-});
+// Adiciona event listeners aos elementos relevantes
+function adicionarEventListeners() {
+    // Event listener para o botão do quiz
+    document.getElementById('quiz-button').addEventListener('click', (event) => {
+        event.preventDefault();
+        exibirPopupQuiz();
+    });
 
-// Fechar o pop-up quando clicar fora do conteúdo do pop-up
-window.addEventListener('click', (e) => {
-    if (e.target == popup) {
-        popup.style.display = 'none';
-    }
-});
+    // Event listener para fechar o pop-up clicando fora dele
+    window.addEventListener('click', (e) => {
+        const popup = document.getElementById('popup');
+        if (e.target == popup) {
+            fecharPopupQuiz();
+        }
+    });
+}
+
+// Função principal para iniciar o código da HOME
+function iniciarHome() {
+    exibirNomeUsuario();
+    adicionarEventListeners();
+}
+
+// Chamada da função principal quando a página for carregada
+window.onload = iniciarHome;
