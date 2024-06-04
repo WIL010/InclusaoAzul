@@ -1,4 +1,3 @@
-const db = require('./DB.js')
 const SERVICES = require('./SERVICES.js');
 
 module.exports.cadastrarUsuario = async (req, res) => {
